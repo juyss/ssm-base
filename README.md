@@ -1,18 +1,9 @@
-# SSM-Baseramework
+项目发布网址 : http://juyss.com/ssm
 
-#### 介绍
-基本整合SSM框架，完成了 Spring-SpringMVC-Mybatis 框架的基本整合. 在此基础上可以构建自己的SSM项目
+后台 : 使用Maven作为项目管理工具,整合SSM框架 , Spring - SpringMVC - Mybatis , 使用了`PageHelper`分页插件和`Mybatis generator`逆向生成工具 , 部分链接使用Restful风格.
 
-#### 软件架构
-软件架构说明
+前台 : 页面使用jsp编写 , 使用Bootstrap框架
 
-项目管理工具 :  Maven  3.6.3
+实现功能 : 员工信息和部门信息的增删改查操作
 
-IDE :     			 IntelliJ IDEA 2020.2
-
-JDK:				   JDK 8.0
-
-MySQL: 			 MySQL 8.0.19
-
-Tomcat:			   Tomcat 8.0	
-
+sql语句以及Mybatis generator配置参考`基本配置.md`文件

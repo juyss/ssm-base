@@ -38,19 +38,19 @@
         <div class="col-md-12">
             <table class="table table-hover">
                 <tr>
-                    <th>员工名</th>
-                    <th>性别</th>
-                    <th>电子邮箱</th>
-                    <th>所在部门</th>
-                    <th>操作</th>
+                    <th style="text-align: center">员工名</th>
+                    <th style="text-align: center">性别</th>
+                    <th style="text-align: center">电子邮箱</th>
+                    <th style="text-align: center">所在部门</th>
+                    <th style="text-align: center">操作</th>
                 </tr>
                 <c:forEach items="${pageInfo.list }" var="emp">
                     <tr>
-                        <th>${emp.empName }</th>
-                        <th>${emp.empGender}</th>
-                        <th>${emp.empEmail }</th>
-                        <th>${emp.department.deptName }</th>
-                        <th>
+                        <th style="text-align: center">${emp.empName }</th>
+                        <th style="text-align: center">${emp.empGender}</th>
+                        <th style="text-align: center">${emp.empEmail }</th>
+                        <th style="text-align: center">${emp.department.deptName }</th>
+                        <th style="text-align: center">
                             <a id="update_btn" class="btn btn-primary btn-sm"
                                href="${pageContext.request.contextPath}/toEmpEdit?pageNum=${pageInfo.pageNum}&empId=${emp.empId}">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -76,9 +76,16 @@
 
     <!-- 显示分页信息 -->
     <div class="row">
+        <!--分页文字信息  -->
+        <div align="center" class="col-md-12">
+            <a class="btn">
+                当前第 ${pageInfo.pageNum} 页，共 ${pageInfo.pages} 页，共 ${pageInfo.total} 条记录
+            </a>
+        </div>
+
         <!-- 分页条信息 -->
-        <div class="col-md-4 col-md-offset-4">
-            <nav aria-label="Page navigation">
+        <div class="col-md-12">
+            <nav align="center" aria-label="Page navigation">
                 <ul class="pagination">
                     <li><a href="${pageContext.request.contextPath}/emps">首页</a></li>
                     <c:if test="${pageInfo.hasPreviousPage }">
@@ -106,12 +113,7 @@
         </div>
     </div>
     <div class="row">
-        <!--分页文字信息  -->
-        <div class="col-md-12 col-md-offset-4">
-            <a class="btn btn-info">
-                当前第 ${pageInfo.pageNum} 页，共 ${pageInfo.pages} 页，共 ${pageInfo.total} 条记录
-            </a>
-        </div>
+
     </div>
 </div>
 </body>

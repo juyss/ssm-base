@@ -5,7 +5,8 @@
 <configuration>
 
     <settings>
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="logImpl" value="log4j"/>
+        <setting name="" value=""/>
     </settings>
 
     <typeAliases>

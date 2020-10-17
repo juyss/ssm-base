@@ -3,6 +3,7 @@ package com.juyss.controller;
 import com.juyss.pojo.Department;
 import com.juyss.service.DepartmentService;
 import com.juyss.util.Constant;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class DepartmentController {
 
+    private Logger log = Logger.getLogger(DepartmentController.class);
+
     private DepartmentService departmentService;
 
     @Autowired
@@ -38,6 +41,7 @@ public class DepartmentController {
      */
     @RequestMapping(value = "/addDept",method = RequestMethod.POST)
     public String addDept(Department department, RedirectAttributes reatt){
+        log.debug("========================准备执行添加部门信息操作======================");
         Boolean flag = departmentService.addDept(department);
         if (flag){
             reatt.addAttribute(Constant.MSG, "部门添加成功");
@@ -55,6 +59,7 @@ public class DepartmentController {
     @RequestMapping("/deleteDept/{deptId}")
     public String deleteDept(@PathVariable("deptId")Integer deptId,
                              RedirectAttributes reatt){
+        log.debug("========================准备执行删除部门信息操作======================");
         Boolean flag = departmentService.deleteDept(deptId);
         if (flag){
             reatt.addAttribute(Constant.MSG, "部门删除成功");
